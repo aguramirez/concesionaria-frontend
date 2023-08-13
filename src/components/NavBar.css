@@ -1,0 +1,11 @@
+.navbar.navbar-expand-lg.bg-body-tertiary, .dropdown-menu{
+    background-color: #494a5b !important;
+}
+
+.navbar-brand, .nav-link, .navbar-toggler, .dropdown-item{
+    color: #e8e8e3 !important;
+}
+
+.dropdown-item:hover{
+    background-color: #3a3b49 !important;
+}
