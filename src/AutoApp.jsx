@@ -1,12 +1,13 @@
-import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { NavBar } from './components/NavBar';
+import { AutoCards } from './components/AutoCards';
 
 export const AutoApp = () => {
 
   return(
-    <Routes>
-      <Route path="/" element={<NavBar />} />
-    </Routes>
+    <>
+      <NavBar />
+      <AutoCards />
+    </>
   )
 }
