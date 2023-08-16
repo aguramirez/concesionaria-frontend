@@ -1,40 +1,34 @@
-import { useEffect, useState } from "react"
-import { getAutos } from "../services/AutoService";
+import { useContext, useEffect } from "react"
 import './AutoCards.css';
+import { AutoContext } from "../context/AutoContext";
 
 export const AutoCards = () => {
 
-    const [autos, setAutos] = useState([]);
+    const {autos, getAutos} = useContext(AutoContext);
 
-    const findAll = async () => {
-        const autosBackend = await getAutos();
-        setAutos(autosBackend);
-    }
-
-    useEffect(
-        () => {
-            findAll();
-        }, []
-    )
+    useEffect(() => {
+        getAutos();
+    },[]);
 
     return (
         <>
-            <div className="card-container">
+            <a href="#">
+            <div className="container">
                 {autos.map(a => (
-                    <div className="card" style={{ width: '18rem' }} key={a.marca}>
-                        <img src={a.imagenesUrl[0]} className="card-img-top" alt="auto" />
-                        <div className="card-body">
-                            <h5 className="card-title">{a.marca} {a.modelo} {a.motor}</h5>
-                            <p className="card-text">{a.descripcion}</p>
-                            <p className="card-text precio">U$D {a.precio}</p>
-                            <a href="#" className="btn btn-primary">
-                                Ver
-                            </a>
-                        </div>
+                <div className="card" key={a.marca}>
+                    <div className="img-box">
+                        <img src={a.imagenesUrl[0]} />
                     </div>
-                
-            ))}
+                    <div className="content">
+                        <h2>{a.marca} {a.modelo} {a.motor}</h2>
+                        <p>{a.anio}</p>
+                        <p>{a.descripcion}</p>
+                        <p className="price">${a.precio}</p>
+                    </div>
+                </div>
+                ))}
             </div>
+            </a>
         </>
 
 

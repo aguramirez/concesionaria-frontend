@@ -1,8 +1,13 @@
+import axios from "axios";
 
-export const getAutos = async() => {
+const BASE_URL = 'http://localhost:8080/autos';
 
-    const res = await fetch('http://localhost:8080/autos')
-    const autos = await res.json();
-
-    return autos;
+export const findAll = async() => {
+    try {
+        const response = await axios.get(BASE_URL);
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+    return null;
 }
