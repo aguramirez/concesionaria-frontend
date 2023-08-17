@@ -64,7 +64,7 @@
     background: #333;
     border-radius: 12px;
     overflow: hidden;
-    transition: 0.5s;
+    transition: 0.7s;
 }
 
 .container .card:hover .img-box {
@@ -95,7 +95,7 @@
 
 .container .card:hover .content {
     top: 130px;
-    height: 250px;
+    height: 220px;
 }
 
 .container .card .content h2 {

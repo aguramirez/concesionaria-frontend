@@ -15,7 +15,7 @@ export const AutoCards = () => {
             <a href="#">
             <div className="container">
                 {autos.map(a => (
-                <div className="card" key={a.marca}>
+                <div className="card" key={a.id}>
                     <div className="img-box">
                         <img src={a.imagenesUrl[0]} />
                     </div>

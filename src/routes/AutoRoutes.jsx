@@ -13,7 +13,7 @@ export const AutoRoutes = () => {
 
                 <Route path="autos" element={<AutoCards />} />
                 <Route path="/" element={<Navigate to="/autos" />} />
-                <Route path="edit" element={<AutoForm />} />
+                <Route path="autos/crear" element={<AutoForm />} />
 
             </Routes>
         </AutoProvider>
