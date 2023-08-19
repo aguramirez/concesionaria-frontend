@@ -1,9 +1,10 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './AutoForm.css';
 import { AutoContext } from '../context/AutoContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const initialAutoForm = {
+    id: 0,
     marca: '',
     modelo: '',
     anio: '',
@@ -22,9 +23,20 @@ const initialAutoForm = {
 
 export const AutoForm = () => {
 
-    const { handlerAddAuto } = useContext(AutoContext);
+    const { handlerAddAuto, autos } = useContext(AutoContext);
     const [autoForm, setAutoForm] = useState(initialAutoForm);
+    const [autoSelected, setAutoSelected] = useState(initialAutoForm);
     const navigate = useNavigate();
+    const {id} = useParams();
+
+    useEffect(() => {
+        if(id){
+            setAutoSelected(autos.find(a => a.id == id)) || initialAutoForm;
+            setAutoForm({
+                ...autoSelected,
+            })
+        }
+    },[autoSelected, id])
 
     const {
         marca,
@@ -201,7 +213,7 @@ export const AutoForm = () => {
                         onChange={onInputChangeImg} required />
                     </div>
                     <div className="col-12">
-                        <button className="btn btn-primary" type="submit">Crear</button>
+                        <button className="btn btn-primary" type="submit">{id > 0?'Editar':'Crear'}</button>
                     </div>
                 </form>
             </div>

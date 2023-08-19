@@ -9,8 +9,6 @@ export const autosReducer = (state = [], action) => {
                     ...action.payload,
                 }
             ];
-        case 'getDetail':
-            return state.find(a => a.id == action.payload.id)
         case 'removeAuto':
             return state.filter(a => a.id !== action.payload)
 

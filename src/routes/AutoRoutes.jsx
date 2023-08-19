@@ -15,6 +15,7 @@ export const AutoRoutes = () => {
                 <Route path="autos" element={<AutoCards />} />
                 <Route path="/" element={<Navigate to="/autos" />} />
                 <Route path="autos/crear" element={<AutoForm />} />
+                <Route path="autos/editar/:id" element={<AutoForm />} />
                 <Route path="autos/detalle/:id" element={<AutoDetail />} />
 
             </Routes>

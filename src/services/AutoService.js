@@ -56,3 +56,37 @@ export const save = async ({ marca,
     return undefined;
 }
 
+export const update = async ({id, marca,modelo,anio,km,precio,descripcion,tipo,version,color,combustible,
+    puertas,
+    transmicion,
+    motor, imagenesUrl}) => {
+    try {
+        return await axios.put(`${BASE_URL}/editar/${id}`, {
+            marca,
+            modelo,
+            anio,
+            km,
+            precio,
+            descripcion,
+            tipo,
+            version,
+            color,
+            combustible,
+            puertas,
+            transmicion,
+            motor, imagenesUrl
+        })
+    } catch (error) {
+        console.error(error)
+    }
+    return undefined;
+}
+
+export const remove = async(id) => {
+    try {
+        await axios.delete(`${BASE_URL}/${id}`);
+    } catch (error) {
+        console.error(error);
+    }
+}
+

@@ -20,18 +20,19 @@ export const AutoCards = () => {
         <>
             <div className="container">
                 {autos.map(a => (
-                    <div className="card" key={a.id}>
+                    <a onClick={() => handlerVerAuto(a.id)} key={a.id}>
+                    <div className="card">
                         <div className="img-box">
                             <img src={a.imagenesUrl[0]} />
                         </div>
                         <div className="content">
                             <h2>{a.marca} {a.modelo} {a.motor}</h2>
-                            <p>{a.anio}</p>
-                            <p>{a.descripcion}</p>
+                            <p className="texto">{a.anio}</p>
+                            <p className="texto">{a.descripcion}</p>
                             <p className="price">${a.precio}</p>
-                            <button onClick={() => handlerVerAuto(a.id)}>Ver</button>
                         </div>
                     </div >
+                    </a>
                 ))}
             </div >
         </>

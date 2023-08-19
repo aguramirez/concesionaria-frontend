@@ -2,13 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 #carrousel{
     width: 100%;
 }
 
-.col ul{
-    margin: 10px;
+p{
+    margin: 20px;
 }

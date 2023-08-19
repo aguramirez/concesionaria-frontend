@@ -5,8 +5,11 @@ export const AutoProvider = ({children}) => {
 
     const {
         autos,
+        autoSelected,
+        initialAuto,
         getAutos,
         handlerAddAuto,
+        handlerRemoveAuto,
         getDetalle,
     } = useAutos();
 
@@ -14,8 +17,11 @@ export const AutoProvider = ({children}) => {
         <AutoContext.Provider value={
             {
                 autos,
+                autoSelected,
+                initialAuto,
                 getAutos,
                 handlerAddAuto,
+                handlerRemoveAuto,
                 getDetalle,
             }
         }>
