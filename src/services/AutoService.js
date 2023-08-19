@@ -12,6 +12,15 @@ export const findAll = async () => {
     return null;
 }
 
+export const findAuto = async (id) => {
+    try {
+        return await axios.get(`${BASE_URL}/detalle/${id}`);
+    } catch (error) {
+        console.error(error);
+    }
+    return null;
+}
+
 export const save = async ({ marca,
     modelo,
     anio,

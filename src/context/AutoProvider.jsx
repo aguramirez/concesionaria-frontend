@@ -7,6 +7,7 @@ export const AutoProvider = ({children}) => {
         autos,
         getAutos,
         handlerAddAuto,
+        getDetalle,
     } = useAutos();
 
     return(
@@ -15,6 +16,7 @@ export const AutoProvider = ({children}) => {
                 autos,
                 getAutos,
                 handlerAddAuto,
+                getDetalle,
             }
         }>
             {children}

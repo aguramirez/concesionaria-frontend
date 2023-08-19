@@ -1,9 +1,26 @@
 import { useReducer } from "react";
-import { findAll, save } from "../services/AutoService";
+import { findAll, findAuto, save } from "../services/AutoService";
 import { autosReducer } from "../reducers/autosReducer";
 import { useNavigate } from "react-router-dom";
 
 const initialAutos = [];
+
+const initialAuto = {
+    id: 0,
+    marca: '',
+    modelo: '',
+    anio: 0,
+    km: 0,
+    precio: 0,
+    descripcion: '',
+    tipo: '',
+    version: '',
+    color: '',
+    combustible: '',
+    puertas: '',
+    transmicion: '',
+    motor: '', imagenesUrl: []
+}
 
 export const useAutos = () => {
 
@@ -16,6 +33,15 @@ export const useAutos = () => {
             type: 'cargandoAutos',
             payload: result.data,
         });
+    }
+
+    const getDetalle = async(id) => {
+        const result = await findAuto(id);
+        return result.data;
+        // dispatch({
+        //     type: 'getDetail',
+        //     payload: result.data,
+        // });
     }
 
     const handlerAddAuto = async(auto) => {
@@ -31,7 +57,9 @@ export const useAutos = () => {
 
     return {
         autos,
+        initialAuto,
         handlerAddAuto,
         getAutos,
+        getDetalle,
     }
 }
