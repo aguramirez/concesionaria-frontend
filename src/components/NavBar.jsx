@@ -15,22 +15,22 @@ export const NavBar = () => {
                             <li className="nav-item mx-3">
                                 <a className="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
-                            <li className="nav-item mx-3">
+                            {/* <li className="nav-item mx-3">
                                 <a className="nav-link" href="#">Link</a>
-                            </li>
+                            </li> */}
                             <li className="nav-item dropdown mx-3">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Admin tools
                                 </a>
                                 <ul className="dropdown-menu">
                                     <li><a className="dropdown-item" href="/autos/crear">Crear</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                    {/* <li><a className="dropdown-item" href="#">Another action</a></li>
+                                    <li><a className="dropdown-item" href="#">Something else here</a></li> */}
                                 </ul>
                             </li>
-                            <li className="nav-item mx-3">
+                            {/* <li className="nav-item mx-3">
                                 <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

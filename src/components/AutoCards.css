@@ -24,7 +24,9 @@
   .card-text.precio{
     font-weight: bold;
   } */
-
+body{
+    background-color: #e8e8e3;
+}
 .container {
     position: relative;
     display: flex;
@@ -32,9 +34,12 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 90px 40px;
-    padding: 90px 50px;
+    padding: 50px 50px;
 }
-
+h3{
+    margin: 20px;
+    font-weight: bold;
+}
 .container .card {
     position: relative;
     display: flex;
